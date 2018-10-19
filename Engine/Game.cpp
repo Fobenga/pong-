@@ -71,10 +71,10 @@ void Game::UpdateModel()
 	// For debug only (comment this to compile the release version)
 	if(wnd.kbd.KeyIsPressed('X'))
 		wnd.Kill();
-	
+
 	if(wnd.kbd.KeyIsPressed('N'))
 		player.set_p1_score(20);
-	
+
 	if(wnd.kbd.KeyIsPressed('M'))
 		player.set_p2_score(20);
 
@@ -109,8 +109,7 @@ void Game::init_anim()
 		{
 			y = 15;
 			animate = false;
-			if(!ball.get_ballrestared())
-				ball.initialize_ball();
+			ball.initialize_ball();
 		}
 		else
 			y -= lineincrease_by;
@@ -129,7 +128,10 @@ void Game::init_anim()
 void Game::ComposeFrame()
 {
 	score.DrawScore();
-	ball.DrawBall();
+
+	if(y <= 15)
+		ball.DrawBall();
+
 	player.DrawPlayers();
 	wall.DrawWall();
 	init_anim();

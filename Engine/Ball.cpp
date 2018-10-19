@@ -25,7 +25,6 @@ bool Ball::initialize_ball()
 		ball_restarting = false;
 		return initialized;
 	}
-
 	return false;
 }
 
@@ -38,18 +37,15 @@ bool Ball::restart_ball()
 		ballspeedy = randomizer(2, 10) * random;
 	}
 
-
-
 	ball_restarting = true;
 	if(initialized)
 	{
 		ball_posx = init_ball_posx;
-		ball_posy = init_ball_posy;
+		ball_posy = randomizer(25, Graphics::ScreenHeight - 25);
 
-		initialized = false;
+		// initialized = false;
 		return initialized;
 	}
-
 	return false;
 }
 
@@ -63,7 +59,8 @@ void Ball::BallBehavior()
 	else
 	{
 		ball_posx = init_ball_posx;
-		ball_posy = init_ball_posy;
+		const int rand_init = randomizer(25, Graphics::ScreenHeight - 25);
+		ball_posy = rand_init;
 	}
 
 }
