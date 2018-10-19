@@ -9,6 +9,7 @@ public:
 	void WallCollision();
 
 private:
+	bool score_increasing = true;
 	static constexpr int p_sizex = 10;
 	static constexpr int p_sizey = 70;
 
@@ -27,13 +28,17 @@ private:
 	int p2_score = 0;
 
 public:
+	void set_increaser(bool value);
 	int get_p1_score() { return p1_score; };
 	int get_p2_score() { return p2_score; };
 	void set_p1_score(int increase_by);
 	void set_p2_score(int increase_by);
 
 	int get_p1_posx();
+	int get_p1_posy();
+	
 	int get_p2_posx();
+	int get_p2_posy();
 
 	int get_p_sizey();
 	int get_p_sizex();
