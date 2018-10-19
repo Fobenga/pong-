@@ -18,16 +18,11 @@ public:
 	bool restart_ball();
 
 public:
-	int ballhit_p1 = player.get_p1_posy();
-	int ballhit_p2 = player.get_p2_posy();
-
-
 	bool get_ballrestared() { return ball_restarting; }
 
 	int get_ballsize() const { return ball_sizexy; }
 	int get_ballpos_y() const { return ball_posy; }
 	int get_ballpos_x() const { return ball_posx; }
-
 
 private:
 	auto randomizer(int init, int end)

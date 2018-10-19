@@ -69,14 +69,14 @@ void Game::UpdateModel()
 	// ========================
 
 	// For debug only (comment this to compile the release version)
-	// if(wnd.kbd.KeyIsPressed('X'))
-	// 	wnd.Kill();
-	// 
-	// if(wnd.kbd.KeyIsPressed('N'))
-	// 	player.set_p1_score(20);
-	// 
-	// if(wnd.kbd.KeyIsPressed('M'))
-	// 	player.set_p2_score(20);
+	if(wnd.kbd.KeyIsPressed('X'))
+		wnd.Kill();
+	
+	if(wnd.kbd.KeyIsPressed('N'))
+		player.set_p1_score(20);
+	
+	if(wnd.kbd.KeyIsPressed('M'))
+		player.set_p2_score(20);
 
 	// Ball related
 	if(wnd.kbd.KeyIsPressed(VK_RETURN))
@@ -87,7 +87,7 @@ void Game::UpdateModel()
 	// ========================
 
 	// Temporary player self movement
-	//player.p1_posy = ball.get_ballpos_y() - player.get_p_sizey() / 2;
+	player.p1_posy = ball.get_ballpos_y() - player.get_p_sizey() / 2;
 	// player.p2_posy = ball.get_ballpos_y() - player.get_p_sizey() / 2;
 
 // Game starts
@@ -97,7 +97,6 @@ void Game::init_anim()
 {
 	if(animate)
 	{
-
 		// Line going down
 		if(bottomline_sizey >= bottomline_enddraw_y / 2)
 			bottomline_sizey = bottomline_enddraw_y / 2;
