@@ -3,7 +3,6 @@
 #include "Score.h"
 #include <random>
 
-
 class Ball
 {
 public:
@@ -25,6 +24,7 @@ public:
 	int get_ballpos_x() const { return ball_posx; }
 
 private:
+	
 	auto randomizer(int init, int end)
 	{
 		std::random_device rd;
